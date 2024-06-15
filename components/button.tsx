@@ -1,38 +1,22 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet, ViewStyle, TextStyle } from 'react-native';
 
-const RedButton = () => {
+interface CustomButtonProps {
+  text: string;
+  textStyle?: TextStyle
+  buttonStyle?: ViewStyle;
+}
+
+
+const CustomButton: React.FC<CustomButtonProps> = ({ text,  buttonStyle, textStyle}) => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Entrar</Text>
+    <View style={[buttonStyle]}>
+      <TouchableOpacity style={[ buttonStyle]} >
+        <Text style={[textStyle]}>{text}</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    marginBottom: 100,
-  },
-  button: {
-    backgroundColor: '#9b0000',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-    width:'50%'
-    
-    
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 20,
-    textAlign: 'center',
-    
-  },
-});
 
-export default RedButton;
+export default CustomButton;

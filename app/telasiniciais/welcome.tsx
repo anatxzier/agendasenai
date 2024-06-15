@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
-import RedButton from "@/components/button";
+import CustomButton from "@/components/button";
 
 const Welcome = () => {
     return (
@@ -21,7 +21,13 @@ const Welcome = () => {
                 AgendaSenai é uma plataforma que otimiza a gestão de eventos e cursos do SENAI, oferecendo acesso fácil e em tempo real a horários e notificações.
             </Text>
 
-            <RedButton/>
+            <View style={styles.buttonContainer}>
+                <CustomButton
+                    buttonStyle={styles.btn}
+                    text="Entrar"
+                    textStyle={styles.btntext}
+                />
+            </View>
 
         </View>
     );
@@ -35,6 +41,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        gap: 60,
     },
     background: {
         position: 'absolute',
@@ -42,7 +49,7 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         width: '100%',
-        height: "80%",
+        height: "65%",
     },
     imgInicio: {
         width: windowWidth * 0.8, 
@@ -51,11 +58,27 @@ const styles = StyleSheet.create({
         marginTop: 30,
     },
     titulo: {
-        color: "#fff",
+        color: "#575656",
         width: "80%", // Ajustado para ocupar 80% da largura da tela
         textAlign: 'center',
         fontSize: 20,
         marginTop: 10, // Espaçamento superior adicional
+    },
+    buttonContainer: {
+        width: '50%', // Largura desejada para o botão
+        alignItems: 'center', // Centraliza horizontalmente o botão
+    },
+    btn: {
+
+        backgroundColor: '#9b0000',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 5,
+    },
+    btntext: {
+        color: 'white',
+        fontSize: 18,
+        textAlign: 'center',
     },
 });
 
