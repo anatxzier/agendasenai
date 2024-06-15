@@ -5,7 +5,7 @@ import Login from "./telasiniciais/login";
 
 export default function Index() {
   return (
-      <Login/>
+      <Welcome/>
 
   );
 }
