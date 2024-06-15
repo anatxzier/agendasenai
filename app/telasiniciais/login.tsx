@@ -1,6 +1,7 @@
 import * as React from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { FontFamily, Color, Border, FontSize } from "../../constants/GlobalSyles"
+import { FontFamily, Color, Border, FontSize } from "../../constants/GlobalSyles";
+import Input from "@/components/Input";
 
 const Login = () => {
   return (
@@ -10,13 +11,14 @@ const Login = () => {
       <Text style={styles.realizeOLogin}>
         Realize o login para acessar o sistema
       </Text>
-      <Text style={[styles.email, styles.emailTypo]}>Email</Text>
-      <Text style={[styles.senha, styles.emailTypo]}>Senha</Text>
-      <View style={[styles.loginItem, styles.loginShadowBox]} />
-      <View style={[styles.loginInner, styles.loginShadowBox]} />
-      <Text style={[styles.examplegmailcom, styles.emailTypo]}>
-        example@gmail.com
-      </Text>
+
+      <Input
+      label="Email"
+      placeholder="example@gmail.com"
+      
+      />
+
+
       <View style={styles.rectangleView} />
       <Text style={styles.entrar}>Entrar</Text>
     </View>
@@ -140,6 +142,8 @@ const styles = StyleSheet.create({
   login: {
     borderRadius: Border.br_11xl,
     flex: 1,
+    justifyContent: 'center', // Centraliza os itens verticalmente
+    alignItems: 'center', // Centraliza os itens horizontalmente
     width: "100%",
     height: 800,
     overflow: "hidden",
