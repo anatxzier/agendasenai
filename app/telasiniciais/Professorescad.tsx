@@ -1,53 +1,30 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 
-interface Instructor {
-  name: string;
-  image: string;
-}
+import { Entypo } from '@expo/vector-icons';
+import PerfilProf from '@/components/perfilProf';
+const { width } = Dimensions.get('window');
 
-interface InstructorCardProps {
-  instructor: Instructor;
-}
-
-const InstructorCard: React.FC<InstructorCardProps> = ({ instructor }) => {
-  return (
-    <View style={styles.instructorCard}>
-      <Image source={{ uri: instructor.image }} style={styles.instructorImage} />
-      <Text style={styles.instructorName}>{instructor.name}</Text>
-    </View>
-  );
-};
-
-const Instrutores: React.FC = () => {
-  const instructors: Instructor[] = [
-    {
-      name: 'Carlos Ribeiro',
-      image: 'https://placehold.co/150',
-    },
-    // Adicione mais instrutores aqui
-  ];
-
+const Professorescad = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton}>
-          <Text style={styles.backButtonText}>{'<'}</Text>
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>Salas</Text>
-        <View style={styles.menuButton} />
+        <Text style={styles.welcomeText}>Instrutores</Text>
       </View>
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>Instrutores</Text>
-        <TouchableOpacity style={styles.addButton}>
-          <Text style={styles.addButtonText}>+ Adicione um instrutor</Text>
-        </TouchableOpacity>
-        <View style={styles.searchButton} />
-      </View>
-      <View style={styles.instructorsContainer}>
-        {instructors.map((instructor, index) => (
-          <InstructorCard key={index} instructor={instructor} />
-        ))}
+
+      <TouchableOpacity style={styles.button}>
+        <Entypo name="plus" size={24} color="white" />
+        <Text style={styles.buttonText}>Adicione um Instrutor</Text>
+      </TouchableOpacity>
+
+      <View style={styles.grid}>
+        <PerfilProf 
+        imageSource={require('../../assets/images/default.jpg')} 
+        text='Carlos Eduardo'>
+
+
+        </PerfilProf>
+
       </View>
     </View>
   );
@@ -56,89 +33,45 @@ const Instrutores: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#f5f5f5',
   },
   header: {
-    flexDirection: 'row',
+    backgroundColor: '#9B0000',
+    height: '20%',
+    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#d9534f',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    marginBottom: 16,
+    paddingBottom: 30,
   },
-  backButton: {
-    marginRight: 16,
-  },
-  backButtonText: {
-    fontSize: 24,
+  welcomeText: {
     color: '#fff',
-  },
-  headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff',
-    flex: 1,
+    textAlign: 'center',
   },
-  menuButton: {
-    width: 24,
-    height: 24,
-    backgroundColor: '#fff',
-    borderRadius: 12,
-  },
-  titleContainer: {
-    flexDirection: 'row',
+  button: {
+    backgroundColor: '#9B0000',
+    margin: 20,
+    padding: 15,
+    borderRadius: 50,
     alignItems: 'center',
-    paddingHorizontal: 16,
-    marginBottom: 16,
+    marginTop: 50,
+    width: '50%',
+    flexDirection: 'row',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#333',
-    flex: 1,
-  },
-  addButton: {
-    backgroundColor: '#d9534f',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 4,
-  },
-  addButtonText: {
-    fontSize: 14,
-    fontWeight: 'bold',
+  buttonText: {
     color: '#fff',
+    fontSize: 12,
+    fontWeight: 'bold',
+    marginLeft: 5,
   },
-  searchButton: {
-    width: 24,
-    height: 24,
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    marginLeft: 16,
-  },
-  instructorsContainer: {
-    paddingHorizontal: 16,
+  grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
+    paddingHorizontal: 10,
+    paddingTop: 50,
   },
-  instructorCard: {
-    width: '48%',
-    marginBottom: 16,
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    padding: 16,
-  },
-  instructorImage: {
-    width: '100%',
-    height: 150,
-    borderRadius: 8,
-    marginBottom: 8,
-  },
-  instructorName: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
-  },
+
 });
 
-export default Instrutores;
+export default Professorescad;
