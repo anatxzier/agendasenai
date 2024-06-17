@@ -4,7 +4,7 @@ import GridItem from '@/components/homebtn';
 
 const { width } = Dimensions.get('window');
 
-const HomeProfessor = () => {
+const HomeCoordenador = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -36,7 +36,7 @@ const HomeProfessor = () => {
           text="Perfil"
         />
         <GridItem
-          imageSource={require('../../assets/images/home4.png')}
+          imageSource={require('../../assets/images/home5.png')}
           text="FAQ"
         />
         </View>
@@ -125,4 +125,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeProfessor;
+export default HomeCoordenador;

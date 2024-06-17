@@ -4,14 +4,11 @@ import GridItem from '@/components/homebtn';
 
 const { width } = Dimensions.get('window');
 
-const HomeProfessor = () => {
+const ProfessoresCad = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require('../../assets/images/default.jpg')}
-          style={styles.profileImage}
-        />
+
         <View style={styles.headerTextContainer}>
           <Text style={styles.welcomeText}>Bem vindo, Carlos.</Text>
           <Text style={styles.subtitle}>Agende uma sala hoje</Text>
@@ -24,21 +21,10 @@ const HomeProfessor = () => {
 
       <View style={styles.grid}>
         <GridItem
-          imageSource={require('../../assets/images/home1.png')}
-          text="Salas da instituição"
+          imageSource={require('../../assets/images/default.jpg')}
+          text="Carlos Eduardo"
         />
-        <GridItem
-          imageSource={require('../../assets/images/home2.png')}
-          text="Salas Agendadas"
-        />
-        <GridItem
-          imageSource={require('../../assets/images/home3.png')}
-          text="Perfil"
-        />
-        <GridItem
-          imageSource={require('../../assets/images/home4.png')}
-          text="FAQ"
-        />
+  
         </View>
     </View>
   );
@@ -102,10 +88,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingHorizontal: 10,
     paddingTop: 50,
+
   },
   gridItem: {
-    backgroundColor: '#9B0000',
-    width: (width - 60) / 2, // Ajuste para garantir espaço ao redor
+    
     marginVertical: 10,
     padding: 20,
     borderRadius: 8,
@@ -113,10 +99,11 @@ const styles = StyleSheet.create({
 
   },
   gridImage: {
-    width: 80, // Aumentando o tamanho da imagem
-    height: 80, // Aumentando o tamanho da imagem
+    width: '100%', // Alteração aqui
+    height: 80, // Mantém a altura desejada
     marginBottom: 10,
   },
+  
   gridItemText: {
     color: '#fff',
     fontSize: 16,
@@ -125,4 +112,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeProfessor;
+export default ProfessoresCad;
