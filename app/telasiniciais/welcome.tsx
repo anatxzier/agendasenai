@@ -1,8 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
-import CustomButton from "@/components/button";
+import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity} from "react-native";
+import Button from "@/components/button";
+import { Link } from "expo-router";
+import { useNavigation } from '@react-navigation/native'; // Importando o hook useNavigation
 
 const Welcome = () => {
+
     return (
         <View style={styles.welcoming}>
             <Image
@@ -22,11 +25,9 @@ const Welcome = () => {
             </Text>
 
             <View style={styles.buttonContainer}>
-                <CustomButton
-                    buttonStyle={styles.btn}
-                    text="Entrar"
-                    textStyle={styles.btntext}
-                />
+                <Button nome="Entrar"
+                href="telasiniciais/login"
+                ></Button>
             </View>
 
         </View>
@@ -69,7 +70,6 @@ const styles = StyleSheet.create({
         alignItems: 'center', // Centraliza horizontalmente o botão
     },
     btn: {
-
         backgroundColor: '#9b0000',
         paddingVertical: 10,
         paddingHorizontal: 20,

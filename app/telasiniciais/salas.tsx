@@ -15,10 +15,10 @@ const Salas = () => {
 
 
       <View style={styles.grid}>
-        <SalasBtn text='C12'/>
-        <SalasBtn text='C13'/>
-        <SalasBtn text='C14'/>
-        <SalasBtn text='C15'/>
+      <SalasBtn linkTo='/telasiniciais/salas' text='C12'/>
+        <SalasBtn linkTo='/telasiniciais/salas'  text='C13'/>
+        <SalasBtn linkTo='/telasiniciais/salas' text='C14'/>
+        <SalasBtn linkTo='/telasiniciais/salas' text='C15'/>
 
 
 

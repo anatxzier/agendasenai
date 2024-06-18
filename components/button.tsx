@@ -1,22 +1,35 @@
-import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, ViewStyle, TextStyle } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from "react-native"
+import { Link } from "expo-router"
+import { LinkProps } from "expo-router/build/link/Link"
 
-interface CustomButtonProps {
-  text: string;
-  textStyle?: TextStyle
-  buttonStyle?: ViewStyle;
+interface LinkBtnProps extends LinkProps {
+  nome: string
 }
 
-
-const CustomButton: React.FC<CustomButtonProps> = ({ text,  buttonStyle, textStyle}) => {
+export default function Button({ nome, ...props }: LinkBtnProps) {
+  const styles = StyleSheet.create({
+    container: {
+      marginTop: 20
+    },
+    button: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '78%',
+      height: 47,
+      backgroundColor: '#9b0000',
+      borderRadius: 5,
+    },
+    TextButton: {
+      fontSize: 14,
+      color: "#FFFFFF",
+    },
+  })
   return (
-    <View style={[buttonStyle]}>
-      <TouchableOpacity style={[ buttonStyle]} >
-        <Text style={[textStyle]}>{text}</Text>
+    <Link style={styles.container} {...props} asChild >
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.TextButton }>{nome}</Text>
       </TouchableOpacity>
-    </View>
-  );
-};
+    </Link>
+  )
+}
 
-
-export default CustomButton;

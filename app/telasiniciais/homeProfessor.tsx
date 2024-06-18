@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
 import GridItem from '@/components/homebtn';
+import Button from '@/components/button';
 
 const { width } = Dimensions.get('window');
 
@@ -8,38 +9,41 @@ const HomeProfessor = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={require('../../assets/images/default.jpg')}
-          style={styles.profileImage}
-        />
         <View style={styles.headerTextContainer}>
+          <Image
+            source={require('../../assets/images/default.jpg')}
+            style={styles.profileImage}
+          />
           <Text style={styles.welcomeText}>Bem vindo, Carlos.</Text>
           <Text style={styles.subtitle}>Agende uma sala hoje</Text>
         </View>
       </View>
-      
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Agendar uma sala</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <Button nome='Agendar uma sala' href='telasiniciais/SalasInst' />
+      </View>
 
       <View style={styles.grid}>
         <GridItem
+        linkTo='/telasiniciais/SalasInst'
           imageSource={require('../../assets/images/home1.png')}
           text="Salas da instituição"
         />
         <GridItem
+        linkTo='/telasiniciais/SalaAgendada'
           imageSource={require('../../assets/images/home2.png')}
           text="Salas Agendadas"
         />
         <GridItem
+         linkTo='/telasiniciais/perfilprof'
           imageSource={require('../../assets/images/home3.png')}
           text="Perfil"
         />
         <GridItem
+         linkTo='/'
           imageSource={require('../../assets/images/home4.png')}
-          text="FAQ"
+          text=""
         />
-        </View>
+      </View>
     </View>
   );
 };
@@ -51,50 +55,36 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#9B0000',
-    paddingVertical: 20,
+    paddingVertical: 60,
     paddingHorizontal: 10,
-    alignItems: 'center',
-    paddingBottom: 30,
     flexDirection: 'row',
-
-    
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   profileImage: {
     width: 80,
     height: 80,
     borderRadius: 40,
-
-
   },
   headerTextContainer: {
     flex: 1,
     justifyContent: 'center',
-    margin: 30,
-    alignItems:'center',
-    paddingBottom: 30,
+    alignItems: 'center',
   },
   welcomeText: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
+    marginTop: 10,
   },
   subtitle: {
     color: '#fff',
     fontSize: 14,
     marginTop: 5,
   },
-  button: {
-    backgroundColor: '#9B0000',
-    margin: 20,
-    padding: 15,
-    borderRadius: 8,
+  buttonContainer: {
+    marginVertical: 20,
     alignItems: 'center',
-    marginTop:50,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
   },
   grid: {
     flexDirection: 'row',
@@ -102,26 +92,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingHorizontal: 10,
     paddingTop: 50,
-  },
-  gridItem: {
-    backgroundColor: '#9B0000',
-    width: (width - 60) / 2, // Ajuste para garantir espaço ao redor
-    marginVertical: 10,
-    padding: 20,
-    borderRadius: 8,
-    alignItems: 'center',
-
-  },
-  gridImage: {
-    width: 80, // Aumentando o tamanho da imagem
-    height: 80, // Aumentando o tamanho da imagem
-    marginBottom: 10,
-  },
-  gridItemText: {
-    color: '#fff',
-    fontSize: 16,
-    textAlign: 'center',
-    
   },
 });
 

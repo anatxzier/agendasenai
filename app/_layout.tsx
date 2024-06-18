@@ -17,6 +17,31 @@ export default function RootLayout() {
         options={{ headerShown: false }}
       />
 
+        <Stack.Screen
+        name="telasiniciais/homeProfessor"
+        options={{ headerShown: false }}
+      />
+
+        <Stack.Screen
+        name="telasiniciais/SalasInst"
+        options={{ headerShown: false }}
+      />
+
+        <Stack.Screen
+        name="telasiniciais/perfilprof"
+        options={{ headerShown: false }}
+      />
+
+        <Stack.Screen
+        name="telasiniciais/SalaAgendada"
+        options={{ headerShown: false }}
+      />
+
+      
+
+
+
+
     </Stack>
 
   );

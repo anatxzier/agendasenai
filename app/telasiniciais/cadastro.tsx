@@ -1,8 +1,9 @@
 import * as React from "react";
 import { StyleSheet, View, Text, TextInput, TouchableOpacity, Dimensions } from "react-native";
-import { FontFamily, Color, Border, FontSize } from "../constants/GlobalSyles";
+import { FontFamily, Color, Border, FontSize } from "../../constants/GlobalSyles";
 import Input from "@/components/Input";
 import CustomButton from "@/components/button";
+import HomeProfessor from "./homeProfessor";
 
 const Cadastro = () => {
   return (
@@ -18,11 +19,12 @@ const Cadastro = () => {
         <Input label="Email" />
         <Input label="Senha" />
 
-        <CustomButton
+        {/* <CustomButton
                     buttonStyle={styles.btn}
                     text="Cadastrar"
-                    textStyle={styles.btntext}
-                />
+         
+                    textStyle={styles.btntext} */}
+                
         </View>
 
       </View>

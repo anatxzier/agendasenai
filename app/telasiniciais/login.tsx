@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from "react-native";
 import { FontFamily, Color, Border, FontSize } from "../../constants/GlobalSyles";
 import Input from "@/components/Input";
 import CustomButton from "@/components/button";
+import Button from "@/components/button";
 
 const Login = () => {
     return (
@@ -18,10 +19,11 @@ const Login = () => {
                 <Input label="Email" />
                 <Input label="Senha" />
 
-                <CustomButton
-                    buttonStyle={styles.btn}
-                    text="Entrar"
-                    textStyle={styles.btntext}
+                <Button
+
+
+                    nome="Entrar"
+                    href='telasiniciais/homeProfessor'
                 />
             </View>
         </View>
@@ -71,7 +73,6 @@ const styles = StyleSheet.create({
         height: "100%",
         textAlign: "center",
         color: Color.colorWhite,
-        fontFamily: FontFamily.koulenRegular,
         position: "absolute",
     },
     text: {
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
         width: '80%', // Redimensiona a largura para ser 80% do contêiner pai
         height: 50,
         textAlign: "center",
-        fontFamily: FontFamily.outfitRegular,
+
         fontSize: FontSize.size_xl,
         position: "absolute",
     },
